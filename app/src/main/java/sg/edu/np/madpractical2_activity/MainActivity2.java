@@ -2,8 +2,10 @@ package sg.edu.np.madpractical2_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.VideoView;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -13,6 +15,11 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        VideoView videoViewer = findViewById(R.id.videoViewer);
+        videoViewer.setVideoURI(
+                Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.retardedvideo) );
+        videoViewer.start();
+
     }
     @Override
     protected void  onStart(){
